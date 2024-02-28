@@ -6,12 +6,13 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.refresh;
 
-//https://edujira.ifellow.ru/
 public class TasksCreatedByMePage extends Page {
     private final SelenideElement lastCreatedTask = $x("//ol[@class='issue-list']/li[1]/a");
     private final SelenideElement inWorkButton = $x("//a[@id='action_id_21']");
     private final SelenideElement businessProcessButton = $x("//a[@id='opsbar-transitions_more']");
     private final SelenideElement completeButton = $x("//aui-item-link[@id='action_id_31']");
+    private final SelenideElement executedButton = $x("//aui-item-link[@id='action_id_51']");
+    private final SelenideElement confirmExecutedButton = $x("//input[@id='issue-workflow-transition-submit']");
     private final SelenideElement status = $x("//span[@id='status-val']/span");
 
     public void openLastCreatedTask() {
@@ -26,6 +27,13 @@ public class TasksCreatedByMePage extends Page {
     public void setCompleteStatus() {
         businessProcessButton.shouldBe(visible).click();
         completeButton.shouldBe(visible).click();
+        refresh();
+    }
+
+    public void setExecutedStatus() {
+        businessProcessButton.shouldBe(visible).click();
+        executedButton.shouldBe(visible).click();
+        confirmExecutedButton.shouldBe(visible).click();
         refresh();
     }
 

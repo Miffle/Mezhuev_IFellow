@@ -25,6 +25,7 @@ public class TasksCreatedByMePageTest extends Webhooks {
     public void clickOnAllStatuses() {
         openLastCreatedTaskStep();
         setInWorkStatusStep();
+        setExecutedStatusStep();
         setCompleteStatusStep();
     }
 
@@ -37,6 +38,11 @@ public class TasksCreatedByMePageTest extends Webhooks {
     public void setInWorkStatusStep() {
         tasksCreatedByMePage.setInWorkStatus();
         Assertions.assertEquals("В РАБОТЕ", tasksCreatedByMePage.getStatus());
+    }
+    @Step("Установка статуса 'ИСПОЛНЕНО'")
+    public void setExecutedStatusStep() {
+        tasksCreatedByMePage.setExecutedStatus();
+        Assertions.assertEquals("РЕШЕННЫЕ", tasksCreatedByMePage.getStatus());
     }
 
     @Step("Установка статуса 'ГОТОВО'")
