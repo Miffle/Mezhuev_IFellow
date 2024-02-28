@@ -26,7 +26,7 @@ public class RunTest {
             ElementsCollection elements = $$(className("header__menu-link"));
             elements.findBy(text("Карьера")).click();
         });
-        step("Проверка ссылки после перехода", ()->webdriver().shouldHave(url("https://ifellow.ru/career/")));
+        step("Проверка ссылки после перехода", () -> webdriver().shouldHave(url("https://ifellow.ru/career/")));
     }
 
     @Test
