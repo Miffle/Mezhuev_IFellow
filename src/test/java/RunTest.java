@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.className;
 import static org.openqa.selenium.By.id;
@@ -17,6 +18,7 @@ public class RunTest {
     public void setUp() {
         Configuration.screenshots = false;
         open("https://ifellow.ru/");
+        getWebDriver().manage().window().maximize();
     }
 
     @Test

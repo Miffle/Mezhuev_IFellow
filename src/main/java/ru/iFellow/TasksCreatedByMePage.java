@@ -21,23 +21,21 @@ public class TasksCreatedByMePage extends Page {
 
     public void setInWorkStatus() {
         inWorkButton.shouldBe(visible).click();
-        refresh();
     }
 
     public void setCompleteStatus() {
         businessProcessButton.shouldBe(visible).click();
         completeButton.shouldBe(visible).click();
-        refresh();
     }
 
     public void setExecutedStatus() {
         businessProcessButton.shouldBe(visible).click();
         executedButton.shouldBe(visible).click();
         confirmExecutedButton.shouldBe(visible).click();
-        refresh();
     }
 
     public String getStatus() {
+        refresh();
         return status.getText();
     }
 
