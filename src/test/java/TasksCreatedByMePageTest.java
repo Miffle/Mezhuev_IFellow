@@ -39,6 +39,7 @@ public class TasksCreatedByMePageTest extends Webhooks {
         tasksCreatedByMePage.setInWorkStatus();
         Assertions.assertEquals("В РАБОТЕ", tasksCreatedByMePage.getStatus());
     }
+
     @Step("Установка статуса 'ИСПОЛНЕНО'")
     public void setExecutedStatusStep() {
         tasksCreatedByMePage.setExecutedStatus();

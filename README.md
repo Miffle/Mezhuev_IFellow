@@ -7,17 +7,16 @@
 ---------
 ## Второе задание
 ### Список тестов:
-1. Из первого задания.
-2. Файлы [**SprintsPage**](src/main/java/ru/iFellow/SprintsPage.java)/[**SprintsPageTest**](src/test/java/SprintsPageTest.java).
+1. Файлы [**SprintsPage**](src/main/java/ru/iFellow/SprintsPage.java)/[**SprintsPageTest**](src/test/java/SprintsPageTest.java).
    1. Проверка статуса задачи TestSelenium.
    2. Проверка значения в поле "Исправить в версиях".
-3. Файлы [**TasksPage**](src/main/java/ru/iFellow/TasksPage.java)/[**TasksPageTest**](src/test/java/TasksPageTest.java).
+2. Файлы [**TasksPage**](src/main/java/ru/iFellow/TasksPage.java)/[**TasksPageTest**](src/test/java/TasksPageTest.java).
    1. Поверка создания новой задачи.
       1. Получение количества задач.
       2. Создание новой темы.
       3. Получение нового количества задач.
       4. Сравнение количества до и после создания.
-4. Файлы [**TasksCreatedByMePage**](src/main/java/ru/iFellow/TasksCreatedByMePage.java)/[**TasksCreatedByMePageTest**](src/test/java/TasksCreatedByMePageTest.java).
+3. Файлы [**TasksCreatedByMePage**](src/main/java/ru/iFellow/TasksCreatedByMePage.java)/[**TasksCreatedByMePageTest**](src/test/java/TasksCreatedByMePageTest.java).
     1. Открытие последней созданной мной задачи.
    2. Прогон по основным состояниям: Сделать, В работе, Исполнено, Готово.
 
