@@ -1,8 +1,5 @@
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import ru.iFellow.TasksCreatedByMePage;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -19,7 +16,6 @@ public class TasksCreatedByMePageTest extends Webhooks {
             tasksCreatedByMePage.login("AT7", "Qwerty123");
         }
     }
-
     @Test
     @DisplayName("Изменение статуса нового теста")
     public void clickOnAllStatuses() {

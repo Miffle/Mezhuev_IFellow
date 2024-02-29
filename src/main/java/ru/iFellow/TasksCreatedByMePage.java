@@ -2,9 +2,9 @@ package ru.iFellow;
 
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.refresh;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TasksCreatedByMePage extends Page {
     private final SelenideElement lastCreatedTask = $x("//ol[@class='issue-list']/li[1]/a");
@@ -21,17 +21,20 @@ public class TasksCreatedByMePage extends Page {
 
     public void setInWorkStatus() {
         inWorkButton.shouldBe(visible).click();
+        status.shouldHave(text("В РАБОТЕ"));
     }
 
     public void setCompleteStatus() {
         businessProcessButton.shouldBe(visible).click();
         completeButton.shouldBe(visible).click();
+        status.shouldHave(text("ГОТОВО"));
     }
 
     public void setExecutedStatus() {
         businessProcessButton.shouldBe(visible).click();
         executedButton.shouldBe(visible).click();
         confirmExecutedButton.shouldBe(visible).click();
+        status.shouldHave(text("РЕШЕННЫЕ"));
     }
 
     public String getStatus() {
