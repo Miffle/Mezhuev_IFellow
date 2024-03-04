@@ -1,5 +1,8 @@
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import ru.iFellow.TasksCreatedByMePage;
 
 import static com.codeborne.selenide.Selenide.open;

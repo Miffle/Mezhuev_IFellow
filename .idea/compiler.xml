@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Mezhuev_IFellow" />
+        <module name="ifellowTest" />
       </profile>
     </annotationProcessing>
   </component>
