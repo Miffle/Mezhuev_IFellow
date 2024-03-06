@@ -1,10 +1,11 @@
-package ru.iFellow;
+package ru.iFellow.pages;
 
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.refresh;
 
 public class TasksCreatedByMePage extends Page {
     private final SelenideElement lastCreatedTask = $x("//ol[@class='issue-list']/li[1]/a");
@@ -41,6 +42,5 @@ public class TasksCreatedByMePage extends Page {
         refresh();
         return status.getText();
     }
-
 
 }

@@ -1,11 +1,11 @@
-package ru.iFellow;
+package ru.iFellow.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.Assertions;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class TasksPage extends Page {
@@ -16,6 +16,8 @@ public class TasksPage extends Page {
     private final SelenideElement frameP = $x("//p");
     private final SelenideElement applyFormButton = $x("//input[@id='create-issue-submit']");
     private final SelenideElement successMessage = $x("//div[contains(@class,'aui-message-success')]");
+    private String countBeforeCreating;
+    private String countAfterCreating;
 
     public boolean createNewTask() {
         createNewTaskButton.click();
@@ -37,5 +39,23 @@ public class TasksPage extends Page {
 
     public String getTotalTaskCount() {
         return tasksCountSpan.shouldBe(visible).getText().split(" ")[2];
+    }
+
+    public void getTotalTaskCountBeforeCreatingStep() {
+        this.countBeforeCreating = this.getTotalTaskCount();
+    }
+
+    public void createNewTaskStep() {
+        Assertions.assertTrue(this.createNewTask());
+        refresh();
+    }
+
+    public void getTotalTaskCountAfterCreatingStep() {
+        this.countAfterCreating = this.getTotalTaskCount();
+    }
+
+    public void assertCountBeforeAndAfterStep() {
+        Assertions.assertNotEquals(countBeforeCreating, countAfterCreating);
+
     }
 }

@@ -1,8 +1,10 @@
+package webhooks;
+
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
+import io.cucumber.java.BeforeStep;
 
 public class Webhooks {
-    @BeforeAll
+    @BeforeStep
     public static void initBrowser() {
         Configuration.screenshots = false;
         Configuration.baseUrl = "https://edujira.ifellow.ru/";
