@@ -9,13 +9,13 @@ import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.refresh;
 
 public class TasksCreatedByMePage extends Page {
-    private final SelenideElement lastCreatedTask = $x("//ol[@class='issue-list']/li[1]/a");
-    private final SelenideElement inWorkButton = $x("//a[@id='action_id_21']");
-    private final SelenideElement businessProcessButton = $x("//a[@id='opsbar-transitions_more']");
-    private final SelenideElement completeButton = $x("//aui-item-link[@id='action_id_31']");
-    private final SelenideElement executedButton = $x("//aui-item-link[@id='action_id_51']");
-    private final SelenideElement confirmExecutedButton = $x("//input[@id='issue-workflow-transition-submit']");
-    private final SelenideElement status = $x("//span[@id='status-val']/span");
+    private final SelenideElement lastCreatedTask = $x("//ol[@class='issue-list']/li[1]/a").as("Последний созданный мной тест");
+    private final SelenideElement inWorkButton = $x("//a[@id='action_id_21']").as("Кнопка \"В работе\"");
+    private final SelenideElement businessProcessButton = $x("//a[@id='opsbar-transitions_more']").as("Кнопка \"Бизнес-процесс\"");
+    private final SelenideElement completeButton = $x("//aui-item-link[@id='action_id_31']").as("Кнопка \"Выполнено\"");
+    private final SelenideElement executedButton = $x("//aui-item-link[@id='action_id_51']").as("Кнопка \"Исполнено\"");
+    private final SelenideElement confirmExecutedButton = $x("//input[@id='issue-workflow-transition-submit']").as("Кнопка \"Исполнено\" для подтверждения формы");
+    private final SelenideElement status = $x("//span[@id='status-val']/span").as("Значение поля статус");
 
     @Step("Открытие последнего созданного мной теста")
     public void openLastCreatedTask() {

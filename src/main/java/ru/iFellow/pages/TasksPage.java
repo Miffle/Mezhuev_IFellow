@@ -10,13 +10,13 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class TasksPage extends Page {
-    private final SelenideElement tasksCountSpan = $x("//div[@class='showing']/child::span");
-    private final SelenideElement createNewTaskButton = $x("//a[@id='create_link']");
-    private final SelenideElement themeInput = $x("//input[@id='summary']");
-    private final SelenideElement descriptionInput = $x("//iframe[@id='mce_0_ifr']");
-    private final SelenideElement frameP = $x("//p");
-    private final SelenideElement applyFormButton = $x("//input[@id='create-issue-submit']");
-    private final SelenideElement successMessage = $x("//div[contains(@class,'aui-message-success')]");
+    private final SelenideElement tasksCountSpan = $x("//div[@class='showing']/child::span").as("Количество задач");
+    private final SelenideElement createNewTaskButton = $x("//a[@id='create_link']").as("Кнопка создания нового задачи");
+    private final SelenideElement themeInput = $x("//input[@id='summary']").as("Поле для ввода темы задачи");
+    private final SelenideElement descriptionInput = $x("//iframe[@id='mce_0_ifr']").as("Фрейм описания");
+    private final SelenideElement frameP = $x("//p").as("Поле ввода описания задачи");
+    private final SelenideElement applyFormButton = $x("//input[@id='create-issue-submit']").as("Кнопка подтверждения создания");
+    private final SelenideElement successMessage = $x("//div[contains(@class,'aui-message-success')]").as("Уведомление об успешном создании задачи");
     private String countBeforeCreating;
     private String countAfterCreating;
 

@@ -21,7 +21,7 @@ public class SprintsPageTest extends Webhooks {
     @Test
     @DisplayName("Проверка поля 'Исправить в версиях'")
     public void testFixFor() {
-        sprintsPage.checkFixForVersion("Version 1.0");
+        sprintsPage.checkFixForVersion("Version 2.0");
     }
 
     @Test

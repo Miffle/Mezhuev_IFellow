@@ -9,8 +9,8 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class SprintsPage extends Page {
 
-    private final SelenideElement fixForVersion = $x("//span[@class='shorten']/child::a");
-    private final SelenideElement taskStatus = $x("//strong[@title='Статус']/following-sibling::span[@class='value']");
+    private final SelenideElement fixForVersion = $x("//span[@class='shorten']/child::a").as("Значение поля \"Исправить в версиях\"");
+    private final SelenideElement taskStatus = $x("//strong[@title='Статус']/following-sibling::span[@class='value']").as("Значение поля \"Статус\"");
 
     @Step("Проверка поля 'Исправить в версиях'. Ожидаемый результат {version}")
     public void checkFixForVersion(String version) {

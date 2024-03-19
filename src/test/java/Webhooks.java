@@ -9,7 +9,7 @@ public class Webhooks {
 
     @BeforeAll
     public static void initBrowser() {
-        SelenideLogger.addListener("AllureSelenide", new CustomAllureSelenide());
+        SelenideLogger.addListener("CustomAllureSelenide", new CustomAllureSelenide());
         Configuration.baseUrl = "https://edujira.ifellow.ru/";
     }
 }
