@@ -5,7 +5,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 public class CustomAllureSelenide extends AllureSelenide {
     public CustomAllureSelenide() {
         super();
-        this.screenshots(false);
+        this.screenshots(true);
         this.savePageSource(false);
     }
 }

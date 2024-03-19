@@ -1,3 +1,5 @@
+package hooks;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import org.junit.jupiter.api.BeforeAll;
