@@ -1,4 +1,4 @@
-package ru.iFellow;
+package ru.iFellow.pages;
 
 import com.codeborne.selenide.SelenideElement;
 
