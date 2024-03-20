@@ -1,27 +1,15 @@
 package ru.iFellow.properties;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+import org.aeonbits.owner.Config;
+import org.aeonbits.owner.ConfigFactory;
 
-public class Props {
+@Config.Sources({"classpath:app.properties"})
+public interface Props extends Config {
+    Props PROPS = ConfigFactory.create(Props.class);
 
-    private final Properties prop = new Properties();
+    @Key("login")
+    String login();
 
-    public Props() {
-
-        try (InputStream file = getClass().getResourceAsStream("/app.properties")) {
-            prop.load(file);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public String getLogin() {
-        return prop.getProperty("jira.login");
-    }
-
-    public String getPassword() {
-        return prop.getProperty("jira.password");
-    }
+    @Key("password")
+    String password();
 }

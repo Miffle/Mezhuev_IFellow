@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.iFellow.pages.TasksCreatedByMePage;
+import ru.iFellow.properties.Props;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -17,7 +18,7 @@ public class TasksCreatedByMePageTest extends Webhooks {
         tasksCreatedByMePage = open("projects/TEST/issues?filter=reportedbyme", TasksCreatedByMePage.class);
         getWebDriver().manage().window().maximize();
         if (tasksCreatedByMePage.checkAuthorization()) {
-            tasksCreatedByMePage.login(props.getLogin(), props.getPassword());
+            tasksCreatedByMePage.login(Props.PROPS.login(), Props.PROPS.password());
         }
     }
 
