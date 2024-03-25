@@ -6,7 +6,6 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.refresh;
 
 public class TasksCreatedByMePage extends Page {
     private final SelenideElement lastCreatedTask = $x("//ol[@class='issue-list']/li[1]/a").as("Последний созданный мной тест");
@@ -42,11 +41,4 @@ public class TasksCreatedByMePage extends Page {
         confirmExecutedButton.shouldBe(visible).click();
         status.shouldHave(text(newStatus));
     }
-
-    public String getStatus() {
-        refresh();
-        return status.getText();
-    }
-
-
 }

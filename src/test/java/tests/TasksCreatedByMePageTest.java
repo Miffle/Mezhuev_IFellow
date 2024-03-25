@@ -1,4 +1,4 @@
-package pages;
+package tests;
 
 import hooks.Webhooks;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +15,7 @@ public class TasksCreatedByMePageTest extends Webhooks {
 
     @BeforeEach
     public void openTab() {
-        tasksCreatedByMePage = open("projects/TEST/issues?filter=reportedbyme", TasksCreatedByMePage.class);
+        tasksCreatedByMePage = open(Props.PROPS.getReportedByMeUrl(), TasksCreatedByMePage.class);
         getWebDriver().manage().window().maximize();
         if (tasksCreatedByMePage.checkAuthorization()) {
             tasksCreatedByMePage.login(Props.PROPS.login(), Props.PROPS.password());

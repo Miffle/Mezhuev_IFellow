@@ -18,5 +18,4 @@ public class Page {
     public boolean checkAuthorization() {
         return loginButton.exists();
     }
-
 }

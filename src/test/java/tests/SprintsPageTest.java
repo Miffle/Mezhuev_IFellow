@@ -1,4 +1,4 @@
-package pages;
+package tests;
 
 import hooks.Webhooks;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +15,7 @@ public class SprintsPageTest extends Webhooks {
 
     @BeforeEach
     public void openTab() {
-        sprintsPage = open("secure/RapidBoard.jspa?rapidView=1&projectKey=TEST&view=detail&selectedIssue=TEST-21966", SprintsPage.class);
+        sprintsPage = open(Props.PROPS.getTestSeleniumUrl(), SprintsPage.class);
         getWebDriver().manage().window().maximize();
         if (sprintsPage.checkAuthorization()) {
             sprintsPage.login(Props.PROPS.login(), Props.PROPS.password());

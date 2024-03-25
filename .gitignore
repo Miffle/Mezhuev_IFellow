@@ -4,3 +4,4 @@ build
 ifellowTest.iml
 pics
 /.allure
+/src/main/resources/chromedriver.exe

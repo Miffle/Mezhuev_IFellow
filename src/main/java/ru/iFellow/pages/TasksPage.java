@@ -42,9 +42,7 @@ public class TasksPage extends Page {
 
     @Step("Проверка изменения общего количества задач после создания новой")
     public void assertCountBeforeAndAfterStep() {
-
         Assertions.assertNotEquals(countBeforeCreating, countAfterCreating);
-
     }
 
     private void inputTheme() {

@@ -12,4 +12,19 @@ public interface Props extends Config {
 
     @Key("password")
     String password();
+
+    @Key("chrome.driver.location")
+    String getChromedriverLocation();
+
+    @Key("base.url")
+    String getBaseUrl();
+
+    @Key("test.selenium.url")
+    String getTestSeleniumUrl();
+
+    @Key("reported.by.me.url")
+    String getReportedByMeUrl();
+
+    @Key("all.issues.url")
+    String getAllIssuesUrl();
 }

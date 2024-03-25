@@ -1,4 +1,4 @@
-package pages;
+package tests;
 
 import hooks.Webhooks;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,10 +13,9 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class TasksPageTest extends Webhooks {
     private TasksPage tasksPage;
 
-
     @BeforeEach
     public void openTab() {
-        tasksPage = open("projects/TEST/issues?filter=allissues", TasksPage.class);
+        tasksPage = open(Props.PROPS.getAllIssuesUrl(), TasksPage.class);
         getWebDriver().manage().window().maximize();
         if (tasksPage.checkAuthorization()) {
             tasksPage.login(Props.PROPS.login(), Props.PROPS.password());
@@ -31,5 +30,4 @@ public class TasksPageTest extends Webhooks {
         tasksPage.getTotalTaskCountAfterCreatingStep();
         tasksPage.assertCountBeforeAndAfterStep();
     }
-
 }

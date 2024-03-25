@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class SprintsPage extends Page {
-
     private final SelenideElement fixForVersion = $x("//span[@class='shorten']/child::a").as("Значение поля \"Исправить в версиях\"");
     private final SelenideElement taskStatus = $x("//strong[@title='Статус']/following-sibling::span[@class='value']").as("Значение поля \"Статус\"");
 
@@ -21,5 +20,4 @@ public class SprintsPage extends Page {
     public void checkTaskStatus(String status) {
         taskStatus.shouldBe(visible).shouldHave(text(status));
     }
-
 }
